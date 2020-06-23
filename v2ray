@@ -1,0 +1,6 @@
+[General]
+
+[Proxy]
+kingsanbus = vmess, kingsanbus.com, 443, username=52f4ab13-4a76-4fe4-a1c0-e85cbf3f5862, skip-cert-verify=true, tls=true, ws=true, ws-path=/web
+
+[Rule]
