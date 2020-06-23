@@ -4,762 +4,1155 @@
 kingsanbus = vmess, kingsanbus.com, 443, username=52f4ab13-4a76-4fe4-a1c0-e85cbf3f5862, skip-cert-verify=true, tls=true, ws=true, ws-path=/web
 
 [Rule]
-DOMAIN-KEYWORD,taboola,REJECT
-DOMAIN-KEYWORD,traffic,REJECT
-DOMAIN-KEYWORD,uedas,REJECT
-DOMAIN-KEYWORD,umeng,REJECT
-DOMAIN-KEYWORD,umtrack,REJECT
-DOMAIN-KEYWORD,uploadMobileData,REJECT
-DOMAIN-KEYWORD,wlmonitor,REJECT
-@@ -8358,6 +8357,7 @@ URL-REGEX,https?://sax\w?.sina.com.cn,REJECT
-URL-REGEX,https?://server-\w+.imrworldwide.com,REJECT
-URL-REGEX,https?://t\d{2}.baidu.com,REJECT
-URL-REGEX,https?://www.bldimg.com/(background|splash)/.+.png$,REJECT
-URL-REGEX,https?://api.zhihu.com/(fringe|zst|real_time|ad-style-service|banners|topstory/hot-lists|market/popover|mqtt|me|.*launch|.*featured-comment-ad|search/(top|tabs|preset)),REJECT
-
-IP-CIDR,1.3.0.10/32,REJECT,no-resolve
-IP-CIDR,10.72.25.0/24,REJECT,no-resolve
-@@ -9828,24 +9828,24 @@ FINAL,PROXY
-^https?:\/\/www\.iqshw\.com\/d\/js\/m http://rewrite.websocket.site:10/Other/Static/JS/Package.js? header
-
-
-// Anti_ISP_JavaScript_Injection
-# > Anti_ISP_JavaScript_Injection
-https?://c.minisplat.cn - reject
-https?://c1.minisplat.cn - reject
-https?://cache.changjingyi.cn - reject
-https?://cache.gclick.cn - reject
-
-// Anti_ISP_Safari_Baidu_CPM_Hijack
-# > Anti_ISP_Safari_Baidu_CPM_Hijack
-https?://m.coolaiy.com/b.php - reject
-https?://www.babyye.com/b.php - reject
-https?://www.gwv7.com/b.php - reject
-https?://www.likeji.net/b.php - reject
-
-// ChinaRailcom
-# > ChinaRailcom
-https?://211.98.70.226:8080/ - reject
-https?://211.98.71.195:8080/ - reject
-https?://211.98.71.196:8080/ - reject
-
-// 腾讯
-# > 腾讯
-https?://.+.mp4\?cdncode=.+&sdtfrom=v3004 - reject
-https?://.+/hls.cache.p4p/ - reject
-https?://.+/music/common/upload/t_splash_info - reject
-@@ -9870,15 +9870,15 @@ https?://szextshort.weixin.qq.com/cgi-bin/mmoc-bin/ad/ - reject
-https?://vv.video.qq.com/getvmind\? - reject
-https?://y.gtimg.cn/music/common/upload/targeted_ads - reject
-
-// 新浪
-# > 新浪
-https?://api.weibo.cn/2/statuses/extend\?gsid= - reject
-https?://edit.sinaapp.com/ua\?t=adv - reject
-https?://free.sinaimg.cn/u1.img.mobile.sina.cn - reject
-https?://simg.s.weibo.com/.+_ios\d{2}.gif - reject
-https?://storage.wax.weibo.com/\w+.(png|jpg|mp4) - reject
-https?://u1.img.mobile.sina.cn/public/files/image/\d{3}x\d{2,4}.+(png|jpg|mp4) - reject
-
-// 优酷
-# > 优酷
-.+&duration=\d{2}& - reject
-https?://(iyes|(api|hd).mobile).youku.com/(adv|common/v3/hudong/new) - reject
-https?://.+.mp4\?ccode=0902 - reject
-@@ -9896,7 +9896,7 @@ https?://r1.ykimg.com/material/.+/\d{6}/\d{4}/ - reject
-https?://ups.youku.com/(.*)needad=1& https?://ups.youku.com/$1needad=0& 302
-https?://vali.cp31.ott.cibntv.net/youku - reject
-
-// 网易
-# > 网易
-https?://.+.127.net/ad - reject
-https?://.+/eapi/(ad|evenet|log)/ - reject
-https?://c.m.163.com/nc/gl/ - reject
-@@ -9913,10 +9913,11 @@ https?://p[4](c)?.music.126.net/\w+==/10995\d{13}.jpg$ - reject
-https?://sp.kaola.com/api/openad - reject
-https?://support.you.163.com/xhr/boot/getBootMedia.json - reject
-
-// 知乎
-# > 知乎
-https?://api.zhihu.com/ab/api - reject
-https?://api.zhihu.com/ad-style-service - reject
-https?://api.zhihu.com/app_config - reject
-https?://api.zhihu.com/appview/api/v4/answers.+recommendations - reject
-https?://api.zhihu.com/banner - reject
-https?://api.zhihu.com/launch - reject
-https?://api.zhihu.com/market/popover - reject
-@@ -9927,23 +9928,23 @@ https?://api.zhihu.com/zst/events - reject
-https?://www.zhihu.com/api/v4/community-ad/ - reject
-https?://www.zhihu.com/terms/privacy/confirm - reject
-
-// 追书神器
-# > 追书神器
-https?://(api|b).zhuishushenqi.com/advert - reject
-https?://api.zhuishushenqi.com/notification/shelfMessage - reject
-https?://api.zhuishushenqi.com/recommend - reject
-https?://api.zhuishushenqi.com/splashes/ios - reject
-https?://mi.gdt.qq.com/gdt_mview.fcg - reject
-// Upgrade
-# > Upgrade
-https?://api.zhuishushenqi.com/user/bookshelf-updated - reject
-https?://itunes.apple.com/lookup\?id=575826903 - reject
-
-// 爱奇艺
-# > 爱奇艺
-https?://.+/cdn/qiyiapp/\d{8}/.+&dis_dz= - reject
-https?://.+/cdn/qiyiapp/\d{8}/.+&z=\w - reject
-https?://.+/videos/other/ - reject
-https?://iface2.iqiyi.com/fusion/3.0/fusion_switch - reject
-
-// 搜狐
-# > 搜狐
-https?://agn.aty.sohu.com/m? - reject
-https?://api.k.sohu.com/api/news/adsense - reject
-https?://hui.sohu.com/predownload2/? - reject
-@@ -9955,7 +9956,7 @@ https?://photocdn.sohu.com/tvmobilemvms - reject
-https?://pic.k.sohu.com/img8/wb/tj/ - reject
-https?://s.go.sohu.com/adgtr/\?gbcode= - reject
-
-// 百度
-# > 百度
-(ps|sv|offnavi|newvector|ulog.imap|newloc)(.map)?.(baidu|n.shifen).com - reject
-https?://afd.baidu.com/afd/entry - reject
-https?://als.baidu.com/clog/clog - reject
-@@ -9975,14 +9976,14 @@ https?://wapwenku.baidu.com/view/fengchao/ - reject
-https?://wapwenku.baidu.com/view/fengchaoTwojump/ - reject
-https?://wenku.baidu.com/shifen/ - reject
-
-// 百度地图
-# > 百度地图
-https?://.+/client/phpui2/ - reject
-
-// 百度贴吧
-# > 百度贴吧
-https?://c.tieba.baidu.com/c/s/splashSchedule - reject
-https?://cover.baidu.com/cover/page/dspSwitchAds/ - reject
-
-// 墨迹天气
-# > 墨迹天气
-https?://ad.api.moji.com/ad/log/stat - reject
-https?://ast.api.moji.com/assist/ad/moji/stat - reject
-https?://cdn.moji.com/adlink/avatarcard - reject
-@@ -9996,27 +9997,27 @@ https?://stat.moji.com - reject
-https?://storage.360buyimg.com/kepler-app - reject
-https?://ugc.moji001.com/sns/json/profile/get_unread - reject
-
-// 小米
-# > 小米
-https?://api.m.mi.com/v1/app/start - reject
-https?://api.jr.mi.com/v1/adv/ - reject
-
-// 中国电信
-# > 中国电信
-https?://image1.chinatelecom-ec.com/images/.+/\d{13}.jpg - reject
-
-// 中国联通
-# > 中国联通
-https?://m.client.10010.com/mobileService/(activity|customer)/(accountListData|get_client_adv|get_startadv) - reject
-https?://m.client.10010.com/uniAdmsInterface/(getHomePageAd|getWelcomeAd) - reject
-https?://m1.ad.10010.com/noticeMag/images/imageUpload/2\d{3} - reject
-https?://res.mall.10010.cn/mall/common/js/fa.js?referer= - reject
-
-// 凤凰网
-# > 凤凰网
-https?://api.newad.ifeng.com/ClientAdversApi1508\?adids= - reject
-https?://c1.ifengimg.com/.+_w1080_h1410.jpg - reject
-https?://exp.3g.ifeng.com/coverAdversApi\?gv=. - reject
-https?://ifengad.3g.ifeng.com/ad/pv.php\?stat= - reject
-https?://iis1.deliver.ifeng.com/getmcode\?adid= - reject
-
-// 京东
-# > 京东
-https?://.+/client?functionId=lauch/lauchConfig&appName=paidaojia - reject
-https?://111.13.29.201/client.action\?functionId=start - reject
-https?://api.m.jd.com/client.action\?functionId=start - reject
-@@ -10025,16 +10026,16 @@ https?://m.360buyimg.com/mobilecms/s640x1136_jfs/ - reject
-https?://ms.jr.jd.com/gw/generic/base/na/m/adInfo - reject
-https?://img12.360buyimg.com.+width=\d{4}&height=\d{4} - reject
-
-// 淘宝
-# > 淘宝
-https?://gw.alicdn.com/tfs/.+-1125-1602 - reject
-
-// 豆瓣
-# > 豆瓣
-https?://(\d{1,3}.){1,3}\d{1,3}/view/dale-online/dale_ad/ - reject
-https?://api.douban.com/v2/app_ads/common_ads - reject
-https?://frodo.douban.com/api/v2/movie/banner - reject
-https?://img\d.doubanio.com/view/dale-online/dale_ad/ - reject
-
-// 斗鱼
-# > 斗鱼
-https?://capi.douyucdn.cn/lapi/sign/app(api)?/getinfo\?client_sys=ios - reject
-https?://capi.douyucdn.cn/api/ios_app/check_update - reject
-https?://capi.douyucdn.cn/api/v1/getStartSend?client_sys=ios - reject
-@@ -10043,24 +10044,24 @@ https?://rtbapi.douyucdn.cn/japi/sign/app/getinfo - reject
-https?://staticlive.douyucdn.cn/.+/getStartSend - reject
-https?://staticlive.douyucdn.cn/upload/signs/ - reject
-
-// 饿了么
-# > 饿了么
-https?://elemecdn.com/.+/sitemap - reject
-https?://fuss10.elemecdn.com/.+/w/640/h/\d{3,4} - reject
-https?://fuss10.elemecdn.com/.+/w/750/h/\d{3,4} - reject
-https?://fuss10.elemecdn.com/.+.mp4 - reject
-https?://m.elecfans.com/static/js/ad.js - reject
-https?://www1.elecfans.com/www/delivery/ - reject
-
-// 头条
-# > 头条
-https?://p\d.pstatp.com/origin - reject
-https?://pb\d.pstatp.com/origin - reject
-
-// 咸鱼
-# > 咸鱼
-https?://gw.alicdn.com/mt/ - reject
-https?://gw.alicdn.com/tfs/.+\d{3,4}-\d{4} - reject
-https?://gw.alicdn.com/tps/.+\d{3,4}-\d{4} - reject
-
-// 喜马拉雅
-# > 喜马拉雅
-https?://adse.+.com/[a-z]{4}/loading\?appid= - reject
-https?://adse.ximalaya.com/ting/feed\?appid= - reject
-https?://adse.ximalaya.com/ting/loading\?appid= - reject
-@@ -10078,16 +10079,16 @@ https?://fdfs.xmcdn.com/group24/M03/E6/09/ - reject
-https?://fdfs.xmcdn.com/group24/M07/C4/3D/ - reject
-https?://fdfs.xmcdn.com/group25/M05/92/D1/ - reject
-
-// 掌阅
-# > 掌阅
-https?://book.img.ireader.com/group6/M00 - reject
-
-// 易车
-# > 易车
-https?://api.ycapp.yiche.com/appnews/getadlist - reject
-https?://api.ycapp.yiche.com/yicheapp/getadlist - reject
-https?://api.ycapp.yiche.com/yicheapp/getappads/ - reject
-https?://cheyouapi.ycapp.yiche.com/appforum/getusermessagecount - reject
-
-// YouTube
-# > YouTube
-https?://.+.googlevideo.com/.+&oad - reject
-https?://.+.googlevideo.com/.+ctier - reject
-https?://.+.googlevideo.com/ptracking\?pltype=adhost - reject
-@@ -10106,60 +10107,60 @@ https?://youtubei.googleapis.com/.+ad_break - reject
-https?://youtubei.googleapis.com/youtubei/.+(ad|log)_ - reject
-ttps?://.+.youtube.com/api/stats/ads - reject
-
-// Youtube++
-# > Youtube++
-https?://api.catch.gift/api/v3/pagead/ - reject
-
-// 网喵
-# > 网喵
-https?://.+0013.+/upload/activity/app_flash_screen_ - reject
-
-// 天山直播
-# > 天山直播
-http?://www.tsytv.com.cn/api/app/ios/ads - reject
-
-// 肯德基
-# > 肯德基
-https?://res.kfc.com.cn/advertisement/ - reject
-
-// 首约汽车
-# > 首约汽车
-https?://img.yun.01zhuanche.com/statics/app/advertisement/.+-750-1334 - reject
-
-// 神舟汽车
-# > 神舟汽车
-https?://img01.10101111cdn.com/adpos/share/ - reject
-
-// 流量银行
-# > 流量银行
-https?://bank.wo.cn/v9/getstartpage - reject
-
-// 海盐
-# > 海盐
-https?://img.ihytv.com/material/adv/img/ - reject
-
-// 美团
-# > 美团
-https?://img.meituan.net/midas/ - reject
-https?://p\d.meituan.net/(mmc|wmbanner)/ - reject
-
-// QQ Pim
-# > QQ Pim
-https?://mmgr.gtimg.com/gjsmall/qqpim/public/ios/splash/.+/\d{4}_\d{4} - reject
-
-// 界面新闻
-# > 界面新闻
-https?://img.jiemian.com/ads/ - reject
-
-// 汽车之家
-# > 汽车之家
-https?://adproxy.autohome.com.cn/AdvertiseService/ - reject
-https?://app2.autoimg.cn/appdfs/ - reject
-
-// 起点读书
-# > 起点读书
-https?://mage.if.qidian.com/Atom.axd/Api/Client/GetConfIOS - reject
-
-// 当当
-# > 当当
-https?://img\d{2}.ddimg.cn/upload_img/.+/670x900 - reject
-https?://img\d{2}.ddimg.cn/upload_img/.+/750x1064 - reject
-https?://mapi.dangdang.com/index.php\?action=init&user_client=iphone - reject
-
-// 国泰君安证券
-# > 国泰君安证券
-https?://dl.app.gtja.com/dzswem/kvController/ - reject
-https?://dl.app.gtja.com/operation/config/startupConfig.json - reject
-
-// 来疯直播
-# > 来疯直播
-https?://api.laifeng.com/v1/start/ads - reject
-
-// 抖音
-# > 抖音
-https?://.+.pstatp.com/img/ad - reject
-https?://.+.snssdk.com/api/ad/ - reject
-https?://aweme.snssdk.com/aweme/v1/aweme/stats/ - reject
-@@ -10170,18 +10171,18 @@ https?://aweme.snssdk.com/service/2/app_log - reject
-https?://frontier.snssdk.com/ - reject
-https?://sf\w-ttcdn-tos.pstatp.com/obj/web.business.image - reject
-
-// 下厨房
-# > 下厨房
-https?://api.xiachufang.com/v2/ad/ - reject
-
-// Facebook
-# > Facebook
-https?://connect.facebook.net/en_US/fbadnw.js - reject
-
-// 快递100
-# > 快递100
-https?://qzonestyle.gtimg.cn/qzone/biz/gdt/mob/sdk/ios/v2/ - reject
-https?://cdn.kuaidi100.com/images/open/appads - reject
-https?://p.kuaidi100.com/mobile/mainapi.do - reject
-
-// Mi
-# > Mi
-https?://api.m.mi.com/.+/app/start - reject
-https?://api-mifit.huami.com/discovery/mi/discovery/homepage_ad\? - reject
-https?://api-mifit.huami.com/discovery/mi/discovery/sleep_ad\? - reject
-@@ -10191,322 +10192,325 @@ https?://api-mifit.huami.com/discovery/mi/discovery/sport_training_ad\? - reject
-https?://api-mifit.huami.com/discovery/mi/discovery/step_detail_ad\? - reject
-https?://api-mifit.huami.com/discovery/mi/discovery/training_video_ad\? - reject
-
-// Weico
-# > Weico
-https?://overseas.weico.cc/portal.php\?a=get_coopen_ads - reject
-
-// StarFans
-# > StarFans
-https?://g.cdn.pengpengla.com/starfantuan/boot-screen-info/ - reject
-
-// Discuz
-# > Discuz
-https?://discuz.gtimg.cn/cloud/scripts/discuz_tips.js - reject
-
-// 果盘游戏
-# > 果盘游戏
-https?://sapi.guopan.cn/get_buildin_ad - reject
-
-// 驾考宝典
-# > 驾考宝典
-https?://789.kakamobi.cn/.+adver - reject
-https?://smart.789.image.mucang.cn/advert - reject
-
-// 招商银行
-# > 招商银行
-https?://pic1cdn.cmbchina.com/appinitads/ - reject
-
-// Cmblife
-# > Cmblife
-https?://mlife.cmbchina.com/ClientFace(Service)?/getAdvertisement.json - reject
-https?://mlife.cmbchina.com/ClientFace(Service)?/preCacheAdvertise.json - reject
-https?://resource.cmbchina.com/fsp/File/ClientFacePublic/.+.gif - reject
-
-// ElongClient
-# > ElongClient
-http?://123.59.30.10/adv/advInfos - reject
-
-// AiRav
-# > AiRav
-https?://bbs.airav.cc/data/.+.jpg - reject
-https?://image.airav.cc/AirADPic/.+.gif - reject
-https?://m.airav.cc/images/Mobile_popout_cn.gif - reject
-
-// 花生地铁
-# > 花生地铁
-https?://cmsapi.wifi8.com/v1/emptyAd/info - reject
-https?://cmsapi.wifi8.com/v2/adNew/config - reject
-https?://cmsfile.wifi8.com/uploads/png/ - reject
-
-// AppSo
-# > AppSo
-https?://sso.ifanr.com/jiong/IOS/appso/splash/ - reject
-
-// 懒人听书
-# > 懒人听书
-https?://118.178.214.118/yyting/advertclient/ClientAdvertList.action - reject
-https?://dapis.mting.info/yyting/advertclient/ClientAdvertList.action - reject
-
-// 91Porn
-# > 91Porn
-https?://192.133.+.mp4$ - reject
-
-// 熊猫直播
-# > 熊猫直播
-https?://static.api.m.panda.tv/index.php\?method=clientconf.firstscreen&__version=(play_cnmb|(\d+.){0,3}\d+)&__plat=ios&__channel=appstore - reject
-
-// 微吼
-# > 微吼
-https?://api.app.vhall.com/v5/000/webinar/launch - reject
-
-// 天天狼人杀
-# > 天天狼人杀
-https?://img.53site.com/Werewolf/AD/ - reject
-https?://werewolf.53site.com/Werewolf/.+/getAdvertise.php - reject
-https?://werewolf.53site.com/Werewolf/.+/getShareVideodb.php - reject
-
-// Apple
-# > Apple
-https?://a.applovin.com/.+/ad - reject
-
-// 微医
-# > 微医
-https?://app.wy.guahao.com/json/white/dayquestion/getpopad - reject
-https?://kano.guahao.cn/.+\?resize=\d{3}-\d{4} - reject
-
-// 车来了
-# > 车来了
-https?://api.chelaile.net.cn/adpub/ - reject
-https?://api.chelaile.net.cn/goocity/advert/ - reject
-https?://atrace.chelaile.net.cn/adpub/ - reject
-https?://atrace.chelaile.net.cn/exhibit\?&adv_image - reject
-https?://pic1.chelaile.net.cn/adv/ - reject
-
-// 健康160
-# > 健康160
-https?://images.91160.com/primary/ - reject
-
-// 1钱包
-# > 1钱包
-https?://d.1qianbao.com/youqian/ads/ - reject
-
-// 火猫直播
-# > 火猫直播
-https?://api.huomao.com/channels/loginAd - reject
-
-// 快看漫画
-# > 快看漫画
-https?://api.kkmh.com/v\d/(ad|advertisement)/ - reject
-
-// 虎扑
-# > 虎扑
-https?://i1.hoopchina.com.cn/blogfile/.+_\d{3}x\d{4} - reject
-
-// 乐视TV
-# > 乐视TV
-https?://.+/letv-gug/ - reject
-
-// 芒果TV
-# > 芒果TV
-https?://pcvideoyd.titan.mgtv.com/pb/ - reject
-
-// Kecheng Gezi
-# > Kecheng Gezi
-https?://classbox2.kechenggezi.com/api/v1/sponge/pull\?request_time= - reject
-
-// 当当阅读
-# > 当当阅读
-https?://e.dangdang.com/media/api.+\?action=getDeviceStartPage - reject
-
-// 什么值得买
-# > 什么值得买
-https?://api.smzdm.com/v1/util/loading - reject
-https?://api.smzdm.com/v2/util/banner - reject
-
-// 飞常准
-# > 飞常准
-https?://app.veryzhun.com/ad/admob - reject
-
-// 凤凰秀
-# > 凤凰秀
-https?://api.fengshows.com/api/launchAD - reject
-
-// 人人视频
-# > 人人视频
-https?://img.rr.tv/banner/.+.jpg - reject
-
-// 人人影视
-# > 人人影视
-https?://ctrl.(playcvn|zmzapi).net/app/(ads|init) - reject
-
-// 老司机
-# > 老司机
-https?://api.laosiji.com/user/startpage/ - reject
-
-// 同花顺 Pro
-# > 同花顺 Pro
-https?://adm.10jqka.com.cn/interface/getads.php - reject
-
-// 杭州市民卡
-# > 杭州市民卡
-https?://smkmp.96225.com/smkcenter/ad/.+/adBanner - reject
-
-// 杭州公交
-# > 杭州公交
-https?://m.ibuscloud.com/v2/app/getStartPage - reject
-
-// 埋堆堆
-# > 埋堆堆
-https?://api.mddcloud.com.cn/api/ad/getClassAd.action - reject
-https?://api.mddcloud.com.cn/api/advert/getHomepage.action - reject
-
-// 叨鱼
-# > 叨鱼
-https?://daoyu.sdo.com/api/userCommon/getAppStartAd - reject
-
-// Keep
-# > Keep
-https?://api.gotokeep.com/ads - reject
-https?://static1.keepcdn.com/.+\d{3}x\d{4} - reject
-
-// iSafePlay
-# > iSafePlay
-https?://aarkissltrial.secure2.footprint.net/v1/ads - reject
-https?://rm.aarki.net/v1/ads - reject
-
-// 超级课程表
-# > 超级课程表
-https?://182.92.244.70/d/json/ - reject
-
-// 飞猪
-# > 飞猪
-https?://acs.m.taobao.com/gw/mtop.trip.activity.querytmsresources/1.0\?type=originaljson - reject
-
-// Finger Driver
-# > Finger Driver
-https?://.+/videos/KnifeHit_4/gear3/ - reject
-
-// 驾图
-# > 驾图
-https?://images.kartor.cn/.+.html - reject
-
-// 动卡空间
-# > 动卡空间
-https?://m.creditcard.ecitic.com/citiccard/mbk/appspace-client/cr/sys/popAdv - reject
-
-// 好奇心日报
-# > 好奇心日报
-https?://app3.qdaily.com/app3/boot_advertisements.json - reject
-
-// 分期乐
-# > 分期乐
-https?://fm.fenqile.com/routev2/other/getfloatAd.json - reject
-https?://fm.fenqile.com/routev2/other/startImg.json - reject
-
-// Vip mobile
-# > Vip mobile
-https?://.+/vips-mobile/router.do\?api_key= - reject
-
-// 顺丰蜂巢
-# > 顺丰蜂巢
-https?://consumer.fcbox.com/v1/ad/OpeningAdInfo/ - reject
-
-// 威锋
-# > 威锋
-https?://api.feng.com[\s\S]*?Claunch_screen - reject
-https?://fengplus.feng.com/index.php\?r=api/slide/.+Ads - reject
-
-// 咪咕
-# > 咪咕
-https?://.+/img/ad.union.api/ - reject
-https?://.+/v1/iflyad/ - reject
-https?://ggic.cmvideo.cn/ad/ - reject
-https?://ggic2.cmvideo.cn/ad/ - reject
-https?://ggv.cmvideo.cn/v1/iflyad/ - reject
-
-// 太平洋电脑网
-# > 太平洋电脑网
-https?://agent-count.pconline.com.cn/counter/adAnalyse/ - reject
-https?://ivy.pchouse.com.cn/adpuba/ - reject
-
-// 开源中国
-# > 开源中国
-https?://www.oschina.net/action/apiv2/get_launcher - reject
-
-// ofo
-# > ofo
-https?://activity2.api.ofo.com/ofo/Api/v2/ads - reject
-https?://ma.ofo.com/ads - reject
-https?://supportda.ofo.com/adaction\? - reject
-
-// 四季线上影视
-# > 四季线上影视
-https?://service.4gtv.tv/4gtv/Data/ADLog - reject
-https?://service.4gtv.tv/4gtv/Data/GetAD - reject
-
-// 爱回收
-# > 爱回收
-https?://gw.aihuishou.com/app-portal/home/getadvertisement - reject
-
-// 58同城
-# > 58同城
-https?://app.58.com/api/log/ - reject
-
-// 多看
-# > 多看
-https?://www.duokan.com/pictures? - reject
-https?://www.duokan.com/promotion_day - reject
-
-// TikTok
-# > TikTok
-https?://api\d?.tiktokv.com/api/ad/ - reject
-https?://api\d?.musical.ly/api/ad/ - reject
-
-// 漫画人
-# > 漫画人
-https?://mangaapi.manhuaren.com/v1/public/getStartPageAds - reject
-
-// 秒拍
-# > 秒拍
-https?://b-api.ins.miaopai.com/1/ad/ - reject
-
-// 迅雷
-# > 迅雷
-https?://images.client.vip.xunlei.com/.+/advert/ - reject
-
-// 天气通
-# > 天气通
-https?://tqt.weibo.cn/.+advert.index - reject
-https?://tqt.weibo.cn/overall/redirect.php\?r=tqt_sdkad - reject
-https?://tqt.weibo.cn/overall/redirect.php\?r=tqtad - reject
-
-// 运动世界
-# > 运动世界
-https?://.+.iydsj.com/api/.+/ad - reject
-
-// 雅思
-# > 雅思
-https?://cdn.tiku.zhan.com/banner - reject
-
-// 美味不用等
-# > 美味不用等
-https?://capi.mwee.cn/app-api/V12/app/getstartad - reject
-
-// AcFun
-# > AcFun
-https?://aes.acfun.cn/s\?adzones - reject
-
-// 讯飞
-# > 讯飞
-https?://imeclient.openspeech.cn/adservice/ - reject
-
-// Yahoo
-# > Yahoo
-https?://m.yap.yahoo.com/v18/getAds.do - reject
-
-// 抱抱
-# > 抱抱
-https?://www.myhug.cn/ad/ - reject
-
-// 麻花影视
-# > 麻花影视
-https?://.+/api/app/member/ver2/user/login/ - reject
-
-// 直播吧
-# > 直播吧
-https?://a.qiumibao.com/activities/config.php - reject
-https?://.+/allOne.php\?ad_name - reject
-
-// 穷游
-# > 穷游
-https?://open.qyer.com/qyer/startpage/ - reject
-https?://open.qyer.com/qyer/config/get - reject
-https?://media.qyer.com/ad/ - reject
-
-// 肆客足球
-# > 肆客足球
-https?://api.qiuduoduo.cn/guideimage - reject
-
-// 萤石云视频
-# > 萤石云视频
-https?://i.ys7.com/api/ads - reject
-
-// 电视家
-# > 电视家
-https?://api.gaoqingdianshi.com/api/v2/ad - reject
-
-// 虎扑
-# > 虎扑
-https?://i\d.hoopchina.com.cn/blogfile//d+//d+/BbsImg.(?<=(big.(png|jpg)))$ - reject
-https?://games.mobileapi.hupu.com/.+/(search|interfaceAdMonitor|status|hupuBbsPm)/(hotkey|init|hupuBbsPm). - reject
-https?://games.mobileapi.hupu.com/interfaceAdMonitor - reject
-
-// 高德
-# > 高德
-https?://m5.amap.com/ws/valueadded/ - reject
-
-// 虾米音乐
-# > 虾米音乐
-https?://pic.xiami.net/images/common/uploadpic[\s\S]*?.jpg$ - reject
-
-// 作业帮
-# > 作业帮
-https?://img.zuoyebang.cc/zyb-image[\s\S]*?.jpg - reject
-
-// bilibili
+# CUSTOM RULE
+
+# Client
+# > Proxy
+PROCESS-NAME,v2ray,DIRECT
+PROCESS-NAME,ss-local,DIRECT
+# > Download
+PROCESS-NAME,aria2c,DIRECT
+PROCESS-NAME,fdm,DIRECT
+PROCESS-NAME,Folx,DIRECT
+PROCESS-NAME,NetTransport,DIRECT
+PROCESS-NAME,Thunder,DIRECT
+PROCESS-NAME,Transmission,DIRECT
+PROCESS-NAME,uTorrent,DIRECT
+PROCESS-NAME,WebTorrent,DIRECT
+PROCESS-NAME,WebTorrent Helper,DIRECT
+
+# Feeb
+DOMAIN-KEYWORD,epochtimes,REJECT
+DOMAIN-SUFFIX,881903.com,REJECT
+DOMAIN-SUFFIX,aboluowang.com,REJECT
+DOMAIN-SUFFIX,bannedbook.org,REJECT
+DOMAIN-SUFFIX,china21.org,REJECT
+DOMAIN-SUFFIX,chinaaffairs.org,REJECT
+DOMAIN-SUFFIX,dajiyuan.com,REJECT
+DOMAIN-SUFFIX,dalianmeng.org,REJECT
+DOMAIN-SUFFIX,dkn.tv,REJECT
+DOMAIN-SUFFIX,dongtaiwang.com,REJECT
+DOMAIN-SUFFIX,edoors.com,REJECT
+DOMAIN-SUFFIX,epochweekly.com,REJECT
+DOMAIN-SUFFIX,falundafa.org,REJECT
+DOMAIN-SUFFIX,fgmtv.org,REJECT
+DOMAIN-SUFFIX,gardennetworks.com,REJECT
+DOMAIN-SUFFIX,gongyiluntan.org,REJECT
+DOMAIN-SUFFIX,gpass1.com,REJECT
+DOMAIN-SUFFIX,hrichina.org,REJECT
+DOMAIN-SUFFIX,huanghuagang.org,REJECT
+DOMAIN-SUFFIX,internetfreedom.org,REJECT
+DOMAIN-SUFFIX,kanzhongguo.com,REJECT
+DOMAIN-SUFFIX,lagranepoca.com,REJECT
+DOMAIN-SUFFIX,mh4u.org,REJECT
+DOMAIN-SUFFIX,mhradio.org,REJECT
+DOMAIN-SUFFIX,minghui.org,REJECT
+DOMAIN-SUFFIX,newrealmstudios.ca,REJECT
+DOMAIN-SUFFIX,ntdtv.com,REJECT
+DOMAIN-SUFFIX,ogate.org,REJECT
+DOMAIN-SUFFIX,open.com.hk,REJECT
+DOMAIN-SUFFIX,organcare.org.tw,REJECT
+DOMAIN-SUFFIX,qxbbs.org,REJECT
+DOMAIN-SUFFIX,renminbao.com,REJECT
+DOMAIN-SUFFIX,secretchina.com,REJECT
+DOMAIN-SUFFIX,shenyun.com,REJECT
+DOMAIN-SUFFIX,shenyunperformingarts.org,REJECT
+DOMAIN-SUFFIX,shenzhoufilm.com,REJECT
+DOMAIN-SUFFIX,soundofhope.org,REJECT
+DOMAIN-SUFFIX,theepochtimes.com,REJECT
+DOMAIN-SUFFIX,tiandixing.org,REJECT
+DOMAIN-SUFFIX,tuidang.org,REJECT
+DOMAIN-SUFFIX,velkaepocha.sk,REJECT
+DOMAIN-SUFFIX,watchinese.com,REJECT
+DOMAIN-SUFFIX,wixsite.com,REJECT
+DOMAIN-SUFFIX,wujie.net,REJECT
+DOMAIN-SUFFIX,wujieliulan.com,REJECT
+DOMAIN-SUFFIX,xinsheng.net,REJECT
+DOMAIN-SUFFIX,zhengjian.org,REJECT
+DOMAIN-SUFFIX,zhuichaguoji.org,REJECT
+
+# > Unbreak
+# >> Firebase Cloud Messaging
+DOMAIN,mtalk.google.com,DIRECT
+
+# Global Area Network
+# (ForeignMedia)
+# (Video)
+# > All4
+USER-AGENT,All4*,ForeignMedia
+DOMAIN-SUFFIX,c4assets.com,ForeignMedia
+DOMAIN-SUFFIX,channel4.com,ForeignMedia
+# > AbemaTV
+USER-AGENT,AbemaTV*,ForeignMedia
+DOMAIN-SUFFIX,abema.io,ForeignMedia
+DOMAIN-SUFFIX,ameba.jp,ForeignMedia
+DOMAIN-SUFFIX,hayabusa.io,ForeignMedia
+DOMAIN,abematv.akamaized.net,ForeignMedia
+DOMAIN,ds-linear-abematv.akamaized.net,ForeignMedia
+DOMAIN,ds-vod-abematv.akamaized.net,ForeignMedia
+DOMAIN,linear-abematv.akamaized.net,ForeignMedia
+# > Amazon Prime Video
+USER-AGENT,InstantVideo.US*,ForeignMedia
+USER-AGENT,Prime%20Video*,ForeignMedia
+DOMAIN-SUFFIX,primevideo.com,ForeignMedia
+# > Bahamut
+USER-AGENT,Anime*,ForeignMedia
+DOMAIN-SUFFIX,bahamut.com.tw,ForeignMedia
+DOMAIN-SUFFIX,gamer.com.tw,ForeignMedia
+DOMAIN,gamer-cds.cdn.hinet.net,ForeignMedia
+DOMAIN,gamer2-cds.cdn.hinet.net,ForeignMedia
+# > BBC iPlayer
+USER-AGENT,BBCiPlayer*,ForeignMedia
+DOMAIN-SUFFIX,bbc.co.uk,ForeignMedia,force-remote-dns
+DOMAIN-SUFFIX,bbci.co.uk,ForeignMedia,force-remote-dns
+DOMAIN-KEYWORD,bbcfmt,ForeignMedia
+DOMAIN-KEYWORD,uk-live,ForeignMedia
+# > DAZN
+USER-AGENT,DAZN*,ForeignMedia
+DOMAIN-SUFFIX,dazn.com,ForeignMedia
+# > encoreTVB
+USER-AGENT,encoreTVB*,ForeignMedia
+DOMAIN-SUFFIX,encoretvb.com,ForeignMedia
+DOMAIN,content.jwplatform.com,ForeignMedia
+DOMAIN,videos-f.jwpsrv.com,ForeignMedia
+# > Fox+ & Fox Now
+USER-AGENT,FOX%20NOW*,ForeignMedia
+USER-AGENT,FOXPlus*,ForeignMedia
+DOMAIN-SUFFIX,dashasiafox.akamaized.net,ForeignMedia
+DOMAIN-SUFFIX,fox.com,ForeignMedia
+DOMAIN-SUFFIX,foxdcg.com,ForeignMedia
+DOMAIN-SUFFIX,foxplus.com,ForeignMedia
+DOMAIN-SUFFIX,staticasiafox.akamaized.net,ForeignMedia
+DOMAIN-SUFFIX,theplatform.com,ForeignMedia
+DOMAIN-SUFFIX,uplynk.com,ForeignMedia
+# > HBO Now & HBO GO
+USER-AGENT,HBO%20NOW*,ForeignMedia
+DOMAIN-SUFFIX,hbo.com,ForeignMedia
+DOMAIN-SUFFIX,hbogo.com,ForeignMedia
+DOMAIN-SUFFIX,hboasia.com,ForeignMedia
+DOMAIN-SUFFIX,hbogo.com,ForeignMedia
+DOMAIN-SUFFIX,hbogoasia.hk,ForeignMedia
+# > Hulu
+DOMAIN-SUFFIX,hulu.com,ForeignMedia
+DOMAIN-SUFFIX,huluim.com,ForeignMedia
+DOMAIN-SUFFIX,hulustream.com,ForeignMedia
+# > KKTV
+USER-AGENT,KKTV*,ForeignMedia
+USER-AGENT,com.kktv.ios.kktv*,ForeignMedia
+DOMAIN-SUFFIX,kktv.com.tw,ForeignMedia
+DOMAIN-SUFFIX,kktv.me,ForeignMedia
+DOMAIN,kktv-theater.kk.stream,ForeignMedia
+# > Line TV
+USER-AGENT,LINE%20TV*,ForeignMedia
+DOMAIN-SUFFIX,linetv.tw,ForeignMedia
+DOMAIN,d3c7rimkq79yfu.cloudfront.net,ForeignMedia
+# > Hulu(フールー)
+DOMAIN-SUFFIX,happyon.jp,ForeignMedia
+DOMAIN-SUFFIX,hulu.jp,ForeignMedia
+# > LiTV
+DOMAIN-SUFFIX,litv.tv,ForeignMedia
+DOMAIN,litvfreemobile-hichannel.cdn.hinet.net,ForeignMedia
+# > myTV_SUPER
+USER-AGENT,mytv*,ForeignMedia
+DOMAIN-SUFFIX,mytvsuper.com,ForeignMedia
+DOMAIN-SUFFIX,tvb.com,ForeignMedia
+# > Netflix
+USER-AGENT,Argo*,ForeignMedia
+DOMAIN-SUFFIX,netflix.com,ForeignMedia
+DOMAIN-SUFFIX,netflix.net,ForeignMedia
+DOMAIN-SUFFIX,nflxext.com,ForeignMedia
+DOMAIN-SUFFIX,nflximg.com,ForeignMedia
+DOMAIN-SUFFIX,nflximg.net,ForeignMedia
+DOMAIN-SUFFIX,nflxso.net,ForeignMedia
+DOMAIN-SUFFIX,nflxvideo.net,ForeignMedia
+IP-CIDR,23.246.0.0/18,ForeignMedia,no-resolve
+IP-CIDR,37.77.184.0/21,ForeignMedia,no-resolve
+IP-CIDR,45.57.0.0/17,ForeignMedia,no-resolve
+IP-CIDR,64.120.128.0/17,ForeignMedia,no-resolve
+IP-CIDR,66.197.128.0/17,ForeignMedia,no-resolve
+IP-CIDR,108.175.32.0/20,ForeignMedia,no-resolve
+IP-CIDR,192.173.64.0/18,ForeignMedia,no-resolve
+IP-CIDR,198.38.96.0/19,ForeignMedia,no-resolve
+IP-CIDR,198.45.48.0/20,ForeignMedia,no-resolve
+# > PBS
+USER-AGENT,PBS*,ForeignMedia
+DOMAIN-SUFFIX,pbs.org,ForeignMedia
+# > Pornhub
+DOMAIN-SUFFIX,phncdn.com,ForeignMedia
+DOMAIN-SUFFIX,pornhub.com,ForeignMedia,force-remote-dns
+DOMAIN-SUFFIX,pornhubpremium.com,ForeignMedia,force-remote-dns
+# > Twitch
+DOMAIN-SUFFIX,twitch.tv,ForeignMedia,force-remote-dns
+DOMAIN-SUFFIX,twitchcdn.net,ForeignMedia
+DOMAIN-SUFFIX,ttvnw.net,ForeignMedia
+# > Viu(TV)
+USER-AGENT,Viu*,ForeignMedia
+USER-AGENT,ViuTV*,ForeignMedia
+DOMAIN-SUFFIX,viu.com,ForeignMedia
+DOMAIN-SUFFIX,viu.tv,ForeignMedia
+DOMAIN,api.viu.now.com,ForeignMedia
+DOMAIN,d1k2us671qcoau.cloudfront.net,ForeignMedia
+DOMAIN,d2anahhhmp1ffz.cloudfront.net,ForeignMedia
+DOMAIN,dfp6rglgjqszk.cloudfront.net,ForeignMedia
+# > Youtube
+USER-AGENT,com.google.ios.youtube*,ForeignMedia
+USER-AGENT,YouTube*,ForeignMedia
+DOMAIN-SUFFIX,googlevideo.com,ForeignMedia,force-remote-dns
+DOMAIN-SUFFIX,youtube.com,ForeignMedia,force-remote-dns
+DOMAIN,youtubei.googleapis.com,ForeignMedia,force-remote-dns
+
+# (Music)
+# > Deezer
+USER-AGENT,Deezer*,ForeignMedia
+DOMAIN-SUFFIX,deezer.com,ForeignMedia,force-remote-dns
+DOMAIN-SUFFIX,dzcdn.net,ForeignMedia
+# > KKBOX
+DOMAIN-SUFFIX,kkbox.com,ForeignMedia
+DOMAIN-SUFFIX,kkbox.com.tw,ForeignMedia
+DOMAIN-SUFFIX,kfs.io,ForeignMedia
+# > JOOX
+USER-AGENT,WeMusic*,ForeignMedia
+USER-AGENT,JOOX*,ForeignMedia
+DOMAIN-SUFFIX,joox.com,ForeignMedia
+# > Pandora
+USER-AGENT,Pandora*,ForeignMedia
+DOMAIN-SUFFIX,pandora.com,ForeignMedia
+# > Spotify
+USER-AGENT,Spotify*,ForeignMedia
+DOMAIN-SUFFIX,pscdn.co,ForeignMedia
+DOMAIN-SUFFIX,scdn.co,ForeignMedia
+DOMAIN-SUFFIX,spotify.com,ForeignMedia
+DOMAIN-SUFFIX,spoti.fi,ForeignMedia
+IP-CIDR,35.186.224.47/32,ForeignMedia,no-resolve
+# > TIDAL
+USER-AGENT,TIDAL*,ForeignMedia
+DOMAIN-SUFFIX,tidal.com,ForeignMedia
+
+# (DomesticMedia)
+# > 愛奇藝台灣站
+DOMAIN-SUFFIX,iqiyi.com,DomesticMedia
+DOMAIN-SUFFIX,71.am,DomesticMedia
 # > bilibili
-https?://api.bilibili.com/pgc/season/rank/cn - reject
-https?://app.bilibili.com/x/v2/rank.*rid=168 - reject
-https?://app.bilibili.com/x/v2/rank.*rid=5 - reject
-https?://app.bilibili.com/x/v2/search/defaultword - reject
-https?://app.bilibili.com/x/v2/search/hot - reject
-https?://app.bilibili.com/x/v2/search/recommend - reject
+DOMAIN-SUFFIX,bilibili.com,DomesticMedia
+DOMAIN,upos-hz-mirrorakam.akamaized.net,DomesticMedia
 
-// 一点万象
-# > 一点万象
-https?://app.mixcapp.com/mixc/api/v2/ad - reject
-
-// WiFi共享大师
-# > WiFi共享大师
-https?://nochange.ggsafe.com/ad/ - reject
-
-// 蜗牛睡眠
-# > 蜗牛睡眠
-https?://snailsleep.net/snail/v1/adTask/ - reject
-https?://snailsleep.net/snail/v1/screen/qn/get\? - reject
-
-// 小睡眠
-# > 小睡眠
-https?://api.psy-1.com/cosleep/startup - reject
-
-// Yahoo!
-# > Yahoo!
-https?://m.yap.yahoo.com/v18/getAds.do - reject
-
-// WeDoctor
-# > WeDoctor
-https?://app.wy.guahao.com/json/white/dayquestion/getpopad - reject
-
-// 无他
-# > 无他
-https?://api-release.wuta-cam.com/ad_tree - reject
-https?://res-release.wuta-cam.com/json/ads_component_cache.json - reject
-
-// 向日葵
-# > 向日葵
-https?://slapi.oray.net/client/ad - reject
-
-// Other
-# > 识货
-https?:\/\/www\.shihuo\.cn\/app3\/saveAppInfo - reject
-
+# (DNS Cache Pollution Protection)
+# > Google
+DOMAIN-SUFFIX,appspot.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,blogger.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,getoutline.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,gvt0.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,gvt1.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,gvt3.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,xn--ngstr-lra8j.com,PROXY,force-remote-dns
+DOMAIN-KEYWORD,google,PROXY,force-remote-dns
+DOMAIN-KEYWORD,blogspot,PROXY,force-remote-dns
+# > Microsoft
+DOMAIN-SUFFIX,onedrive.live.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,xboxlive.com,PROXY,force-remote-dns
+# > Facebook
+DOMAIN-SUFFIX,cdninstagram.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,fb.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,fb.me,PROXY,force-remote-dns
+DOMAIN-SUFFIX,fbaddins.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,fbcdn.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,fbsbx.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,fbworkmail.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,instagram.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,m.me,PROXY,force-remote-dns
+DOMAIN-SUFFIX,messenger.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,oculus.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,oculuscdn.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,rocksdb.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,whatsapp.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,whatsapp.net,PROXY,force-remote-dns
+DOMAIN-KEYWORD,facebook,PROXY,force-remote-dns
+IP-CIDR,3.123.36.126/32,PROXY,no-resolve
+IP-CIDR,52.58.209.134/32,PROXY,no-resolve
+IP-CIDR,54.93.124.31/32,PROXY,no-resolve
+IP-CIDR,54.173.34.141/32,PROXY,no-resolve
+IP-CIDR,54.235.23.242/32,PROXY,no-resolve
+IP-CIDR,169.45.248.118/32,PROXY,no-resolve
+# > Twitter
+DOMAIN-SUFFIX,pscp.tv,PROXY,force-remote-dns
+DOMAIN-SUFFIX,periscope.tv,PROXY,force-remote-dns
+DOMAIN-SUFFIX,t.co,PROXY,force-remote-dns
+DOMAIN-SUFFIX,twimg.co,PROXY,force-remote-dns
+DOMAIN-SUFFIX,twimg.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,twitpic.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,vine.co,PROXY,force-remote-dns
+DOMAIN-KEYWORD,twitter,PROXY,force-remote-dns
+# > Telegram
+DOMAIN-SUFFIX,t.me,PROXY
+DOMAIN-SUFFIX,tdesktop.com,PROXY
+DOMAIN-SUFFIX,telegra.ph,PROXY,force-remote-dns
+DOMAIN-SUFFIX,telegram.me,PROXY
+DOMAIN-SUFFIX,telegram.org,PROXY,force-remote-dns
+IP-CIDR,67.198.55.0/24,PROXY,no-resolve
+IP-CIDR,91.108.4.0/22,PROXY,no-resolve
+IP-CIDR,91.108.8.0/22,PROXY,no-resolve
+IP-CIDR,91.108.12.0/22,PROXY,no-resolve
+IP-CIDR,91.108.16.0/22,PROXY,no-resolve
+IP-CIDR,91.108.56.0/22,PROXY,no-resolve
+IP-CIDR,109.239.140.0/24,PROXY,no-resolve
+IP-CIDR,149.154.160.0/20,PROXY,no-resolve
+IP-CIDR,205.172.60.0/22,PROXY,no-resolve
+# > Line
+DOMAIN-SUFFIX,line.me,PROXY,force-remote-dns
+DOMAIN-SUFFIX,line-apps.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,line-scdn.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,naver.jp,PROXY,force-remote-dns
+IP-CIDR,103.2.30.0/23,PROXY,no-resolve
+IP-CIDR,125.209.208.0/20,PROXY,no-resolve
+IP-CIDR,147.92.128.0/17,PROXY,no-resolve
+IP-CIDR,203.104.144.0/21,PROXY,no-resolve
 # > Other
-amdc - reject
-dataflow - reject
-featured-comment-ad - reject
+DOMAIN-SUFFIX,4shared.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,520cc.cc,PROXY,force-remote-dns
+DOMAIN-SUFFIX,881903.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,9cache.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,9gag.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,abc.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,abc.net.au,PROXY,force-remote-dns
+DOMAIN-SUFFIX,abebooks.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,amazon.co.jp,PROXY,force-remote-dns
+DOMAIN-SUFFIX,apigee.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,apk-dl.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,apkfind.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,apkmirror.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,apkmonk.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,apkpure.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,aptoide.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,archive.is,PROXY,force-remote-dns
+DOMAIN-SUFFIX,archive.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,arte.tv,PROXY,force-remote-dns
+DOMAIN-SUFFIX,artstation.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,arukas.io,PROXY,force-remote-dns
+DOMAIN-SUFFIX,ask.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,avgle.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,badoo.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,bandwagonhost.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,bbc.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,behance.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,bibox.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,biggo.com.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,binance.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,bitcointalk.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,bitfinex.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,bitmex.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,bit-z.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,bloglovin.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,bloomberg.cn,PROXY,force-remote-dns
+DOMAIN-SUFFIX,bloomberg.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,blubrry.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,book.com.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,booklive.jp,PROXY,force-remote-dns
+DOMAIN-SUFFIX,books.com.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,box.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,businessinsider.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,bwh1.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,castbox.fm,PROXY,force-remote-dns
+DOMAIN-SUFFIX,cbc.ca,PROXY,force-remote-dns
+DOMAIN-SUFFIX,cdw.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,change.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,ck101.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,clarionproject.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,clyp.it,PROXY,force-remote-dns
+DOMAIN-SUFFIX,cna.com.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,comparitech.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,conoha.jp,PROXY,force-remote-dns
+DOMAIN-SUFFIX,crucial.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,cts.com.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,cw.com.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,cyberctm.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,dailymotion.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,dailyview.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,daum.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,daumcdn.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,dcard.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,deepdiscount.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,depositphotos.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,deviantart.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,disconnect.me,PROXY,force-remote-dns
+DOMAIN-SUFFIX,discordapp.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,discordapp.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,disqus.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,dns2go.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,dowjones.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,dropbox.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,dropboxusercontent.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,duckduckgo.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,dw.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,dynu.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,earthcam.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,ebookservice.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,economist.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,edgecastcdn.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,edu,PROXY,force-remote-dns
+DOMAIN-SUFFIX,elpais.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,enanyang.my,PROXY,force-remote-dns
+DOMAIN-SUFFIX,encyclopedia.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,esoir.be,PROXY,force-remote-dns
+DOMAIN-SUFFIX,euronews.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,feedly.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,firech.at,PROXY,force-remote-dns
+DOMAIN-SUFFIX,flickr.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,flitto.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,foreignpolicy.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,friday.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,ftchinese.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,ftimg.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,gate.io,PROXY,force-remote-dns
+DOMAIN-SUFFIX,getlantern.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,getsync.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,globalvoices.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,goo.ne.jp,PROXY,force-remote-dns
+DOMAIN-SUFFIX,goodreads.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,gov,PROXY,force-remote-dns
+DOMAIN-SUFFIX,gov.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,gumroad.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,hbg.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,heroku.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,hightail.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,hk01.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,hkbf.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,hkbookcity.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,hkej.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,hket.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,hkgolden.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,hootsuite.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,hudson.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,hyread.com.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,ibtimes.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,i-cable.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,icij.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,icoco.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,imgur.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,initiummall.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,insecam.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,ipfs.io,PROXY,force-remote-dns
+DOMAIN-SUFFIX,issuu.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,istockphoto.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,japantimes.co.jp,PROXY,force-remote-dns
+DOMAIN-SUFFIX,jiji.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,jinx.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,jkforum.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,joinmastodon.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,justpaste.it,PROXY,force-remote-dns
+DOMAIN-SUFFIX,kakao.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,kakaocorp.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,kik.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,kobo.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,kobobooks.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,kodingen.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,lemonde.fr,PROXY,force-remote-dns
+DOMAIN-SUFFIX,lepoint.fr,PROXY,force-remote-dns
+DOMAIN-SUFFIX,lihkg.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,listennotes.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,livestream.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,logmein.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,mail.ru,PROXY,force-remote-dns
+DOMAIN-SUFFIX,mailchimp.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,marc.info,PROXY,force-remote-dns
+DOMAIN-SUFFIX,matters.news,PROXY,force-remote-dns
+DOMAIN-SUFFIX,medium.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,mega.nz,PROXY,force-remote-dns
+DOMAIN-SUFFIX,mil,PROXY,force-remote-dns
+DOMAIN-SUFFIX,mingpao.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,mobile01.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,myspace.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,myspacecdn.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nanyang.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,naver.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,newstapa.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nhk.or.jp,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nicovideo.jp,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nii.ac.jp,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nikkei.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nofile.io,PROXY,force-remote-dns
+DOMAIN-SUFFIX,now.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nrk.no,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nyt.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nytchina.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nytcn.me,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nytco.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nytimes.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nytimg.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nytlog.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,nytstyle.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,ok.ru,PROXY,force-remote-dns
+DOMAIN-SUFFIX,okex.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,on.cc,PROXY,force-remote-dns
+DOMAIN-SUFFIX,orientaldaily.com.my,PROXY,force-remote-dns
+DOMAIN-SUFFIX,overcast.fm,PROXY,force-remote-dns
+DOMAIN-SUFFIX,paltalk.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,pbxes.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,pcdvd.com.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,pchome.com.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,pcloud.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,picacomic.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,pinimg.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,pixiv.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,player.fm,PROXY,force-remote-dns
+DOMAIN-SUFFIX,plurk.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,po18.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,prism-break.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,proxifier.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,pts.org.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,pubu.com.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,pubu.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,pureapk.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,quora.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,quoracdn.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,rakuten.co.jp,PROXY,force-remote-dns
+DOMAIN-SUFFIX,readingtimes.com.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,readmoo.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,reddit.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,redditmedia.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,resilio.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,reuters.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,rfi.fr,PROXY,force-remote-dns
+DOMAIN-SUFFIX,roadshow.hk,PROXY,force-remote-dns
+DOMAIN-SUFFIX,scmp.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,scribd.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,seatguru.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,shadowsocks.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,shopee.tw,PROXY,force-remote-dns
+DOMAIN-SUFFIX,slideshare.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,softfamous.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,soundcloud.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,startpage.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,steamcommunity.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,steemit.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,steemitwallet.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,t66y.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,tapatalk.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,teco-hk.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,teco-mo.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,teddysun.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,theguardian.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,theinitium.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,tineye.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,torproject.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,tumblr.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,turbobit.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,tutanota.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,tvboxnow.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,udn.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,unseen.is,PROXY,force-remote-dns
+DOMAIN-SUFFIX,upmedia.mg,PROXY,force-remote-dns
+DOMAIN-SUFFIX,uptodown.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,ustream.tv,PROXY,force-remote-dns
+DOMAIN-SUFFIX,uwants.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,v2ray.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,viber.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,videopress.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,vimeo.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,voachinese.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,voanews.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,voxer.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,vzw.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,w3schools.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,washingtonpost.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,wattpad.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,whoer.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,wikimapia.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,wikipedia.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,winudf.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,wire.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,wordpress.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,workflow.is,PROXY,force-remote-dns
+DOMAIN-SUFFIX,worldcat.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,wsj.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,wsj.net,PROXY,force-remote-dns
+DOMAIN-SUFFIX,xhamster.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,xnxx.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,xvideos.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,yahoo.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,yandex.ru,PROXY,force-remote-dns
+DOMAIN-SUFFIX,ycombinator.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,yesasia.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,yes-news.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,yomiuri.co.jp,PROXY,force-remote-dns
+DOMAIN-SUFFIX,you-get.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,zaobao.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,zb.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,zello.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,zeronet.io,PROXY,force-remote-dns
+DOMAIN-SUFFIX,zoom.us,PROXY,force-remote-dns
+DOMAIN-KEYWORD,github,PROXY,force-remote-dns
+DOMAIN-KEYWORD,jav,PROXY,force-remote-dns
+DOMAIN-KEYWORD,pinterest,PROXY,force-remote-dns
+DOMAIN-KEYWORD,porn,PROXY,force-remote-dns
+DOMAIN-KEYWORD,wikileaks,PROXY,force-remote-dns
+
+# (Region-Restricted Access Denied)
+DOMAIN-SUFFIX,apartmentratings.com,PROXY
+DOMAIN-SUFFIX,apartments.com,PROXY
+DOMAIN-SUFFIX,bankmobilevibe.com,PROXY
+DOMAIN-SUFFIX,bing.com,PROXY,force-remote-dns
+DOMAIN-SUFFIX,booktopia.com.au,PROXY
+DOMAIN-SUFFIX,cccat.io,PROXY
+DOMAIN-SUFFIX,centauro.com.br,PROXY
+DOMAIN-SUFFIX,clearsurance.com,PROXY
+DOMAIN-SUFFIX,costco.com,PROXY
+DOMAIN-SUFFIX,crackle.com,PROXY
+DOMAIN-SUFFIX,depositphotos.cn,PROXY
+DOMAIN-SUFFIX,dish.com,PROXY
+DOMAIN-SUFFIX,dmm.co.jp,PROXY
+DOMAIN-SUFFIX,dmm.com,PROXY
+DOMAIN-SUFFIX,dnvod.tv,PROXY
+DOMAIN-SUFFIX,esurance.com,PROXY
+DOMAIN-SUFFIX,extmatrix.com,PROXY
+DOMAIN-SUFFIX,fastpic.ru,PROXY
+DOMAIN-SUFFIX,flipboard.com,PROXY
+DOMAIN-SUFFIX,fnac.be,PROXY
+DOMAIN-SUFFIX,fnac.com,PROXY
+DOMAIN-SUFFIX,funkyimg.com,PROXY
+DOMAIN-SUFFIX,fxnetworks.com,PROXY
+DOMAIN-SUFFIX,gettyimages.com,PROXY
+DOMAIN-SUFFIX,go.com,PROXY
+DOMAIN-SUFFIX,here.com,PROXY
+DOMAIN-SUFFIX,jcpenney.com,PROXY
+DOMAIN-SUFFIX,jiehua.tv,PROXY
+DOMAIN-SUFFIX,mailfence.com,PROXY
+DOMAIN-SUFFIX,nationwide.com,PROXY
+DOMAIN-SUFFIX,nbc.com,PROXY
+DOMAIN-SUFFIX,nexon.com,PROXY
+DOMAIN-SUFFIX,nordstrom.com,PROXY
+DOMAIN-SUFFIX,nordstromimage.com,PROXY
+DOMAIN-SUFFIX,nordstromrack.com,PROXY
+DOMAIN-SUFFIX,superpages.com,PROXY
+DOMAIN-SUFFIX,target.com,PROXY
+DOMAIN-SUFFIX,thinkgeek.com,PROXY
+DOMAIN-SUFFIX,tracfone.com,PROXY
+DOMAIN-SUFFIX,uploader.jp,PROXY
+DOMAIN-SUFFIX,vevo.com,PROXY
+DOMAIN-SUFFIX,viu.tv,PROXY
+DOMAIN-SUFFIX,vk.com,PROXY
+DOMAIN-SUFFIX,vsco.co,PROXY
+DOMAIN-SUFFIX,xfinity.com,PROXY
+DOMAIN-SUFFIX,zattoo.com,PROXY
+USER-AGENT,Roam*,PROXY
+
+# (The Most Popular Sites)
+# > Apple
+# >> TestFlight
+DOMAIN,testflight.apple.com,PROXY
+# >> Apple URL Shortener
+DOMAIN-SUFFIX,appsto.re,PROXY
+# >> iBooks Store download
+DOMAIN,books.itunes.apple.com,PROXY
+# >> iTunes Store Moveis Trailers
+DOMAIN,hls.itunes.apple.com,PROXY
+# >> App Store Preview
+DOMAIN,apps.apple.com,PROXY
+DOMAIN,itunes.apple.com,PROXY
+# >> Spotlight
+DOMAIN,api-glb-sea.smoot.apple.com,PROXY
+# >> Dictionary
+DOMAIN,lookup-api.apple.com,PROXY
+PROCESS-NAME,LookupViewService,PROXY
+# >> Apple News and Apple Map TOMTOM Version
+DOMAIN,gspe1-ssl.ls.apple.com,PROXY
+PROCESS-NAME,News,PROXY
+USER-AGENT,AppleNews*,PROXY
+USER-AGENT,com.apple.news*,PROXY
+DOMAIN-SUFFIX,apple.news,PROXY
+DOMAIN,news-client.apple.com,PROXY
+DOMAIN,news-edge.apple.com,PROXY
+DOMAIN,news-events.apple.com,PROXY
+DOMAIN,apple.comscoreresearch.com,PROXY
+# > Google
+DOMAIN-SUFFIX,abc.xyz,PROXY
+DOMAIN-SUFFIX,android.com,PROXY
+DOMAIN-SUFFIX,androidify.com,PROXY
+DOMAIN-SUFFIX,dialogflow.com,PROXY
+DOMAIN-SUFFIX,autodraw.com,PROXY
+DOMAIN-SUFFIX,capitalg.com,PROXY
+DOMAIN-SUFFIX,certificate-transparency.org,PROXY
+DOMAIN-SUFFIX,chrome.com,PROXY
+DOMAIN-SUFFIX,chromeexperiments.com,PROXY
+DOMAIN-SUFFIX,chromestatus.com,PROXY
+DOMAIN-SUFFIX,chromium.org,PROXY
+DOMAIN-SUFFIX,creativelab5.com,PROXY
+DOMAIN-SUFFIX,debug.com,PROXY
+DOMAIN-SUFFIX,deepmind.com,PROXY
+DOMAIN-SUFFIX,firebaseio.com,PROXY
+DOMAIN-SUFFIX,getmdl.io,PROXY
+DOMAIN-SUFFIX,ggpht.com,PROXY
+DOMAIN-SUFFIX,gmail.com,PROXY
+DOMAIN-SUFFIX,gmodules.com,PROXY
+DOMAIN-SUFFIX,godoc.org,PROXY
+DOMAIN-SUFFIX,golang.org,PROXY
+DOMAIN-SUFFIX,gstatic.com,PROXY
+DOMAIN-SUFFIX,gv.com,PROXY
+DOMAIN-SUFFIX,gwtproject.org,PROXY
+DOMAIN-SUFFIX,itasoftware.com,PROXY
+DOMAIN-SUFFIX,madewithcode.com,PROXY
+DOMAIN-SUFFIX,material.io,PROXY
+DOMAIN-SUFFIX,polymer-project.org,PROXY
+DOMAIN-SUFFIX,admin.recaptcha.net,PROXY
+DOMAIN-SUFFIX,recaptcha.net,PROXY
+DOMAIN-SUFFIX,shattered.io,PROXY
+DOMAIN-SUFFIX,synergyse.com,PROXY
+DOMAIN-SUFFIX,tensorflow.org,PROXY
+DOMAIN-SUFFIX,tfhub.dev,PROXY
+DOMAIN-SUFFIX,tiltbrush.com,PROXY
+DOMAIN-SUFFIX,waveprotocol.org,PROXY
+DOMAIN-SUFFIX,waymo.com,PROXY
+DOMAIN-SUFFIX,webmproject.org,PROXY
+DOMAIN-SUFFIX,webrtc.org,PROXY
+DOMAIN-SUFFIX,whatbrowser.org,PROXY
+DOMAIN-SUFFIX,widevine.com,PROXY
+DOMAIN-SUFFIX,x.company,PROXY
+DOMAIN-SUFFIX,youtu.be,PROXY
+DOMAIN-SUFFIX,yt.be,PROXY
+DOMAIN-SUFFIX,ytimg.com,PROXY
+# > Microsoft
+# >> Microsoft OneDrive
+DOMAIN-SUFFIX,1drv.com,PROXY
+DOMAIN-SUFFIX,1drv.ms,PROXY
+DOMAIN-SUFFIX,blob.core.windows.net,PROXY
+DOMAIN-SUFFIX,livefilestore.com,PROXY
+DOMAIN-SUFFIX,onedrive.com,PROXY
+DOMAIN-SUFFIX,storage.live.com,PROXY
+DOMAIN-SUFFIX,storage.msn.com,PROXY
+DOMAIN,oneclient.sfx.ms,PROXY
+# > Other
+DOMAIN-SUFFIX,0rz.tw,PROXY
+DOMAIN-SUFFIX,4bluestones.biz,PROXY
+DOMAIN-SUFFIX,9bis.net,PROXY
+DOMAIN-SUFFIX,allconnected.co,PROXY
+DOMAIN-SUFFIX,amazonaws.com,PROXY
+DOMAIN-SUFFIX,aol.com,PROXY
+DOMAIN-SUFFIX,bcc.com.tw,PROXY
+DOMAIN-SUFFIX,bit.ly,PROXY
+DOMAIN-SUFFIX,bitshare.com,PROXY
+DOMAIN-SUFFIX,blog.jp,PROXY
+DOMAIN-SUFFIX,blogimg.jp,PROXY
+DOMAIN-SUFFIX,blogtd.org,PROXY
+DOMAIN-SUFFIX,broadcast.co.nz,PROXY
+DOMAIN-SUFFIX,camfrog.com,PROXY
+DOMAIN-SUFFIX,cfos.de,PROXY
+DOMAIN-SUFFIX,citypopulation.de,PROXY
+DOMAIN-SUFFIX,cloudfront.net,PROXY
+DOMAIN-SUFFIX,ctitv.com.tw,PROXY
+DOMAIN-SUFFIX,cuhk.edu.hk,PROXY
+DOMAIN-SUFFIX,cusu.hk,PROXY
+DOMAIN-SUFFIX,discuss.com.hk,PROXY
+DOMAIN-SUFFIX,dropboxapi.com,PROXY
+DOMAIN-SUFFIX,duolingo.cn,PROXY
+DOMAIN-SUFFIX,edditstatic.com,PROXY
+DOMAIN-SUFFIX,flickriver.com,PROXY
+DOMAIN-SUFFIX,focustaiwan.tw,PROXY
+DOMAIN-SUFFIX,free.fr,PROXY
+DOMAIN-SUFFIX,gigacircle.com,PROXY
+DOMAIN-SUFFIX,hk-pub.com,PROXY
+DOMAIN-SUFFIX,hosting.co.uk,PROXY
+DOMAIN-SUFFIX,hwcdn.net,PROXY
+DOMAIN-SUFFIX,ifixit.com,PROXY
+DOMAIN-SUFFIX,iphone4hongkong.com,PROXY
+DOMAIN-SUFFIX,iphonetaiwan.org,PROXY
+DOMAIN-SUFFIX,iptvbin.com,PROXY
+DOMAIN-SUFFIX,jtvnw.net,PROXY
+DOMAIN-SUFFIX,linksalpha.com,PROXY
+DOMAIN-SUFFIX,manyvids.com,PROXY
+DOMAIN-SUFFIX,myactimes.com,PROXY
+DOMAIN-SUFFIX,newsblur.com,PROXY
+DOMAIN-SUFFIX,now.im,PROXY
+DOMAIN-SUFFIX,nowe.com,PROXY
+DOMAIN-SUFFIX,redditlist.com,PROXY
+DOMAIN-SUFFIX,signal.org,PROXY
+DOMAIN-SUFFIX,smartmailcloud.com,PROXY
+DOMAIN-SUFFIX,sparknotes.com,PROXY
+DOMAIN-SUFFIX,streetvoice.com,PROXY
+DOMAIN-SUFFIX,supertop.co,PROXY
+DOMAIN-SUFFIX,tv.com,PROXY
+DOMAIN-SUFFIX,typepad.com,PROXY
+DOMAIN-SUFFIX,udnbkk.com,PROXY
+DOMAIN-SUFFIX,urbanairship.com,PROXY
+DOMAIN-SUFFIX,whispersystems.org,PROXY
+DOMAIN-SUFFIX,wikia.com,PROXY
+DOMAIN-SUFFIX,wn.com,PROXY
+DOMAIN-SUFFIX,wolframalpha.com,PROXY
+DOMAIN-SUFFIX,x-art.com,PROXY
+DOMAIN-SUFFIX,yimg.com,PROXY
+DOMAIN,api.steampowered.com,PROXY
+DOMAIN,store.steampowered.com,PROXY
+
+# China Area Network
+# > 360
+DOMAIN-SUFFIX,qhres.com,DIRECT
+DOMAIN-SUFFIX,qhimg.com,DIRECT
+# > Akamai
+DOMAIN-SUFFIX,akadns.net,DIRECT
+# DOMAIN-SUFFIX,akamai.net,DIRECT
+# DOMAIN-SUFFIX,akamaiedge.net,DIRECT
+# DOMAIN-SUFFIX,akamaihd.net,DIRECT
+# DOMAIN-SUFFIX,akamaistream.net,DIRECT
+# DOMAIN-SUFFIX,akamaized.net,DIRECT
+# > Alibaba
+USER-AGENT,%E4%BC%98%E9%85%B7*,DIRECT
+DOMAIN-SUFFIX,alibaba.com,DIRECT
+DOMAIN-SUFFIX,alicdn.com,DIRECT
+DOMAIN-SUFFIX,alikunlun.com,DIRECT
+DOMAIN-SUFFIX,alipay.com,DIRECT
+DOMAIN-SUFFIX,amap.com,DIRECT
+DOMAIN-SUFFIX,autonavi.com,DIRECT
+DOMAIN-SUFFIX,dingtalk.com,DIRECT
+DOMAIN-SUFFIX,mxhichina.com,DIRECT
+DOMAIN-SUFFIX,soku.com,DIRECT
+DOMAIN-SUFFIX,taobao.com,DIRECT
+DOMAIN-SUFFIX,tmall.com,DIRECT
+DOMAIN-SUFFIX,tmall.hk,DIRECT
+DOMAIN-SUFFIX,ykimg.com,DIRECT
+DOMAIN-SUFFIX,youku.com,DIRECT
+DOMAIN-SUFFIX,xiami.com,DIRECT
+DOMAIN-SUFFIX,xiami.net,DIRECT
+# > Apple
+DOMAIN-SUFFIX,aaplimg.com,Apple
+DOMAIN-SUFFIX,apple.co,Apple
+DOMAIN-SUFFIX,apple.com,Apple
+DOMAIN-SUFFIX,appstore.com,Apple
+DOMAIN-SUFFIX,cdn-apple.com,Apple
+DOMAIN-SUFFIX,crashlytics.com,Apple
+DOMAIN-SUFFIX,icloud.com,Apple
+DOMAIN-SUFFIX,icloud-content.com,Apple
+DOMAIN-SUFFIX,me.com,Apple
+DOMAIN-SUFFIX,mzstatic.com,Apple
+DOMAIN,www-cdn.icloud.com.akadns.net,Apple
+# > Baidu
+DOMAIN-SUFFIX,baidu.com,DIRECT
+DOMAIN-SUFFIX,baidubcr.com,DIRECT
+DOMAIN-SUFFIX,bdstatic.com,DIRECT
+DOMAIN-SUFFIX,yunjiasu-cdn.net,DIRECT
+# > bilibili
+DOMAIN-SUFFIX,acgvideo.com,DIRECT
+DOMAIN-SUFFIX,biliapi.com,DIRECT
+DOMAIN-SUFFIX,biliapi.net,DIRECT
+DOMAIN-SUFFIX,bilibili.com,DIRECT
+DOMAIN-SUFFIX,hdslb.com,DIRECT
+# > Blizzard
+DOMAIN-SUFFIX,blizzard.com,DIRECT
+DOMAIN-SUFFIX,battle.net,DIRECT
+DOMAIN,blzddist1-a.akamaihd.net,DIRECT
+# > ByteDance
+DOMAIN-SUFFIX,feiliao.com,DIRECT
+DOMAIN-SUFFIX,pstatp.com,DIRECT
+DOMAIN-SUFFIX,snssdk.com,DIRECT
+DOMAIN-SUFFIX,iesdouyin.com,DIRECT
+DOMAIN-SUFFIX,toutiao.com,DIRECT
+# > DiDi
+DOMAIN-SUFFIX,didialift.com,DIRECT
+DOMAIN-SUFFIX,didiglobal.com,DIRECT
+DOMAIN-SUFFIX,udache.com,DIRECT
+# > 蛋蛋赞
+DOMAIN-SUFFIX,343480.com,DIRECT
+DOMAIN-SUFFIX,baduziyuan.com,DIRECT
+DOMAIN-SUFFIX,com-hs-hkdy.com,DIRECT
+DOMAIN-SUFFIX,czybjz.com,DIRECT
+DOMAIN-SUFFIX,dandanzan.com,DIRECT
+DOMAIN-SUFFIX,fjhps.com,DIRECT
+DOMAIN-SUFFIX,kuyunbo.club,DIRECT
+# > ChinaNet
+DOMAIN-SUFFIX,21cn.com,DIRECT
+# > HunanTV
+DOMAIN-SUFFIX,hitv.com,DIRECT
+DOMAIN-SUFFIX,mgtv.com,DIRECT
+# > iQiyi
+DOMAIN-SUFFIX,iqiyi.com,DIRECT
+DOMAIN-SUFFIX,iqiyipic.com,DIRECT
+DOMAIN-SUFFIX,71.am.com,DIRECT
+# > JD
+DOMAIN-SUFFIX,jd.com,DIRECT
+DOMAIN-SUFFIX,jd.hk,DIRECT
+DOMAIN-SUFFIX,jdpay.com,DIRECT
+DOMAIN-SUFFIX,360buyimg.com,DIRECT
+# > Kingsoft
+DOMAIN-SUFFIX,iciba.com,DIRECT
+DOMAIN-SUFFIX,ksosoft.com,DIRECT
+# > Meitu
+DOMAIN-SUFFIX,meitu.com,DIRECT
+DOMAIN-SUFFIX,meitudata.com,DIRECT
+DOMAIN-SUFFIX,meitustat.com,DIRECT
+DOMAIN-SUFFIX,meipai.com,DIRECT
+# > MI
+DOMAIN-SUFFIX,duokan.com,DIRECT
+DOMAIN-SUFFIX,mi-img.com,DIRECT
+DOMAIN-SUFFIX,miui.com,DIRECT
+DOMAIN-SUFFIX,miwifi.com,DIRECT
+DOMAIN-SUFFIX,xiaomi.com,DIRECT
+# > Microsoft
+DOMAIN-SUFFIX,microsoft.com,DIRECT
+DOMAIN-SUFFIX,msecnd.net,DIRECT
+DOMAIN-SUFFIX,office365.com,DIRECT
+DOMAIN-SUFFIX,outlook.com,DIRECT
+DOMAIN-SUFFIX,visualstudio.com,DIRECT
+DOMAIN-SUFFIX,windows.com,DIRECT
+DOMAIN-SUFFIX,windowsupdate.com,DIRECT
+DOMAIN,officecdn-microsoft-com.akamaized.net,DIRECT
+# > NetEase
+USER-AGENT,NeteaseMusic*,DIRECT
+USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*,DIRECT
+DOMAIN-SUFFIX,163.com,DIRECT
+DOMAIN-SUFFIX,126.net,DIRECT
+DOMAIN-SUFFIX,127.net,DIRECT
+DOMAIN-SUFFIX,163yun.com,DIRECT
+DOMAIN-SUFFIX,lofter.com,DIRECT
+DOMAIN-SUFFIX,netease.com,DIRECT
+DOMAIN-SUFFIX,ydstatic.com,DIRECT
+# > Sina
+DOMAIN-SUFFIX,sina.com,DIRECT
+DOMAIN-SUFFIX,weibo.com,DIRECT
+DOMAIN-SUFFIX,weibocdn.com,DIRECT
+# > Sohu
+DOMAIN-SUFFIX,sohu.com,DIRECT
+DOMAIN-SUFFIX,sohucs.com,DIRECT
+DOMAIN-SUFFIX,sohu-inc.com,DIRECT
+DOMAIN-SUFFIX,v-56.com,DIRECT
+# > Sogo
+DOMAIN-SUFFIX,sogo.com,DIRECT
+DOMAIN-SUFFIX,sogou.com,DIRECT
+DOMAIN-SUFFIX,sogoucdn.com,DIRECT
+# > Steam
+DOMAIN-SUFFIX,steampowered.com,DIRECT
+DOMAIN-SUFFIX,steam-chat.com,DIRECT
+DOMAIN-SUFFIX,steamgames.com,DIRECT
+DOMAIN-SUFFIX,steamusercontent.com,DIRECT
+DOMAIN-SUFFIX,steamcontent.com,DIRECT
+DOMAIN-SUFFIX,steamstatic.com,DIRECT
+DOMAIN-SUFFIX,steamstat.us,DIRECT
+# > Tencent
+USER-AGENT,MicroMessenger%20Client,DIRECT
+USER-AGENT,WeChat*,DIRECT
+DOMAIN-SUFFIX,gtimg.com,DIRECT
+DOMAIN-SUFFIX,myqcloud.com,DIRECT
+DOMAIN-SUFFIX,qq.com,DIRECT
+DOMAIN-SUFFIX,tencent.com,DIRECT
+# > YYeTs
+USER-AGENT,YYeTs*,DIRECT
+DOMAIN-SUFFIX,jstucdn.com,DIRECT
+DOMAIN-SUFFIX,zimuzu.io,DIRECT
+DOMAIN-SUFFIX,zimuzu.tv,DIRECT
+DOMAIN-SUFFIX,zmz2019.com,DIRECT
+DOMAIN-SUFFIX,zmzapi.com,DIRECT
+DOMAIN-SUFFIX,zmzapi.net,DIRECT
+DOMAIN-SUFFIX,zmzfile.com,DIRECT
+# > Content Delivery Network
+DOMAIN-SUFFIX,ccgslb.com,DIRECT
+DOMAIN-SUFFIX,ccgslb.net,DIRECT
+DOMAIN-SUFFIX,chinanetcenter.com,DIRECT
+DOMAIN-SUFFIX,meixincdn.com,DIRECT
+DOMAIN-SUFFIX,ourdvs.com,DIRECT
+DOMAIN-SUFFIX,wangsu.com,DIRECT
+# > IP Query
+DOMAIN-SUFFIX,ipip.net,DIRECT
+DOMAIN-SUFFIX,ip.la,DIRECT
+DOMAIN-SUFFIX,ip-cdn.com,DIRECT
+DOMAIN-SUFFIX,ipv6-test.com,DIRECT
+DOMAIN-SUFFIX,test-ipv6.com,DIRECT
+DOMAIN-SUFFIX,whatismyip.com,DIRECT
+# > Speed Test
+# DOMAIN-SUFFIX,speedtest.net,DIRECT
+DOMAIN-SUFFIX,netspeedtestmaster.com,DIRECT
+DOMAIN,speedtest.macpaw.com,DIRECT
+# > Private Tracker
+DOMAIN-SUFFIX,awesome-hd.me,DIRECT
+DOMAIN-SUFFIX,broadcasthe.net,DIRECT
+DOMAIN-SUFFIX,chdbits.co,DIRECT
+DOMAIN-SUFFIX,classix-unlimited.co.uk,DIRECT
+DOMAIN-SUFFIX,empornium.me,DIRECT
+DOMAIN-SUFFIX,gazellegames.net,DIRECT
+DOMAIN-SUFFIX,hdchina.org,DIRECT
+DOMAIN-SUFFIX,hdsky.me,DIRECT
+DOMAIN-SUFFIX,jpopsuki.eu,DIRECT
+DOMAIN-SUFFIX,keepfrds.com,DIRECT
+DOMAIN-SUFFIX,m-team.cc,DIRECT
+DOMAIN-SUFFIX,nanyangpt.com,DIRECT
+DOMAIN-SUFFIX,ncore.cc,DIRECT
+DOMAIN-SUFFIX,open.cd,DIRECT
+DOMAIN-SUFFIX,ourbits.club,DIRECT
+DOMAIN-SUFFIX,passthepopcorn.me,DIRECT
+DOMAIN-SUFFIX,privatehd.to,DIRECT
+DOMAIN-SUFFIX,redacted.ch,DIRECT
+DOMAIN-SUFFIX,springsunday.net,DIRECT
+DOMAIN-SUFFIX,tjupt.org,DIRECT
+DOMAIN-SUFFIX,totheglory.im,DIRECT
+# > Other
+DOMAIN-SUFFIX,cn,DIRECT
+DOMAIN-SUFFIX,360in.com,DIRECT
+DOMAIN-SUFFIX,51ym.me,DIRECT
+DOMAIN-SUFFIX,8686c.com,DIRECT
+DOMAIN-SUFFIX,abchina.com,DIRECT
+DOMAIN-SUFFIX,accuweather.com,DIRECT
+DOMAIN-SUFFIX,aicoinstorge.com,DIRECT
+DOMAIN-SUFFIX,air-matters.com,DIRECT
+DOMAIN-SUFFIX,air-matters.io,DIRECT
+DOMAIN-SUFFIX,aixifan.com,DIRECT
+DOMAIN-SUFFIX,amd.com,DIRECT
+DOMAIN-SUFFIX,b612.net,DIRECT
+DOMAIN-SUFFIX,bdatu.com,DIRECT
+DOMAIN-SUFFIX,beitaichufang.com,DIRECT
+DOMAIN-SUFFIX,bjango.com,DIRECT
+DOMAIN-SUFFIX,booking.com,DIRECT
+DOMAIN-SUFFIX,bstatic.com,DIRECT
+DOMAIN-SUFFIX,cailianpress.com,DIRECT
+DOMAIN-SUFFIX,camera360.com,DIRECT
+DOMAIN-SUFFIX,chinaso.com,DIRECT
+DOMAIN-SUFFIX,chuimg.com,DIRECT
+DOMAIN-SUFFIX,chunyu.mobi,DIRECT
+DOMAIN-SUFFIX,chushou.tv,DIRECT
+DOMAIN-SUFFIX,cmbchina.com,DIRECT
+DOMAIN-SUFFIX,cmbimg.com,DIRECT
+DOMAIN-SUFFIX,ctrip.com,DIRECT
+DOMAIN-SUFFIX,dfcfw.com,DIRECT
+DOMAIN-SUFFIX,docschina.org,DIRECT
+DOMAIN-SUFFIX,douban.com,DIRECT
+DOMAIN-SUFFIX,doubanio.com,DIRECT
+DOMAIN-SUFFIX,douyu.com,DIRECT
+DOMAIN-SUFFIX,dxycdn.com,DIRECT
+DOMAIN-SUFFIX,dytt8.net,DIRECT
+DOMAIN-SUFFIX,eastmoney.com,DIRECT
+DOMAIN-SUFFIX,eudic.net,DIRECT
+DOMAIN-SUFFIX,feng.com,DIRECT
+DOMAIN-SUFFIX,frdic.com,DIRECT
+DOMAIN-SUFFIX,futu5.com,DIRECT
+DOMAIN-SUFFIX,futunn.com,DIRECT
+DOMAIN-SUFFIX,geilicdn.com,DIRECT
+DOMAIN-SUFFIX,getpricetag.com,DIRECT
+DOMAIN-SUFFIX,gifshow.com,DIRECT
+DOMAIN-SUFFIX,godic.net,DIRECT
+DOMAIN-SUFFIX,hicloud.com,DIRECT
+DOMAIN-SUFFIX,hongxiu.com,DIRECT
+DOMAIN-SUFFIX,hostbuf.com,DIRECT
+DOMAIN-SUFFIX,huxiucdn.com,DIRECT
+DOMAIN-SUFFIX,huya.com,DIRECT
+DOMAIN-SUFFIX,infinitynewtab.com,DIRECT
+DOMAIN-SUFFIX,ithome.com,DIRECT
+DOMAIN-SUFFIX,java.com,DIRECT
+DOMAIN-SUFFIX,kaiyanapp.com,DIRECT
+DOMAIN-SUFFIX,keepcdn.com,DIRECT
+DOMAIN-SUFFIX,kkmh.com,DIRECT
+DOMAIN-SUFFIX,licdn.com,DIRECT
+DOMAIN-SUFFIX,linkedin.com,DIRECT
+DOMAIN-SUFFIX,loli.net,DIRECT
+DOMAIN-SUFFIX,luojilab.com,DIRECT
+DOMAIN-SUFFIX,maoyun.tv,DIRECT
+DOMAIN-SUFFIX,meituan.net,DIRECT
+DOMAIN-SUFFIX,mobike.com,DIRECT
+DOMAIN-SUFFIX,mubu.com,DIRECT
+DOMAIN-SUFFIX,myzaker.com,DIRECT
+DOMAIN-SUFFIX,nim-lang-cn.org,DIRECT
+DOMAIN-SUFFIX,nvidia.com,DIRECT
+DOMAIN-SUFFIX,oracle.com,DIRECT
+DOMAIN-SUFFIX,paypal.com,DIRECT
+DOMAIN-SUFFIX,paypalobjects.com,DIRECT
+DOMAIN-SUFFIX,qdaily.com,DIRECT
+DOMAIN-SUFFIX,qidian.com,DIRECT
+DOMAIN-SUFFIX,qyer.com,DIRECT
+DOMAIN-SUFFIX,qyerstatic.com,DIRECT
+DOMAIN-SUFFIX,raychase.net,DIRECT
+DOMAIN-SUFFIX,ronghub.com,DIRECT
+DOMAIN-SUFFIX,ruguoapp.com,DIRECT
+DOMAIN-SUFFIX,sm.ms,DIRECT
+DOMAIN-SUFFIX,smzdm.com,DIRECT
+DOMAIN-SUFFIX,snapdrop.net,DIRECT
+DOMAIN-SUFFIX,snwx.com,DIRECT
+DOMAIN-SUFFIX,s-reader.com,DIRECT
+DOMAIN-SUFFIX,sspai.com,DIRECT
+DOMAIN-SUFFIX,teamviewer.com,DIRECT
+DOMAIN-SUFFIX,tianyancha.com,DIRECT
+DOMAIN-SUFFIX,udacity.com,DIRECT
+DOMAIN-SUFFIX,uning.com,DIRECT
+DOMAIN-SUFFIX,weather.com,DIRECT
+DOMAIN-SUFFIX,weico.cc,DIRECT
+DOMAIN-SUFFIX,weidian.com,DIRECT
+DOMAIN-SUFFIX,xiachufang.com,DIRECT
+DOMAIN-SUFFIX,ximalaya.com,DIRECT
+DOMAIN-SUFFIX,xinhuanet.com,DIRECT
+DOMAIN-SUFFIX,xmcdn.com,DIRECT
+DOMAIN-SUFFIX,yangkeduo.com,DIRECT
+DOMAIN-SUFFIX,zhangzishi.cc,DIRECT
+DOMAIN-SUFFIX,zhihu.com,DIRECT
+DOMAIN-SUFFIX,zhimg.com,DIRECT
+DOMAIN-SUFFIX,zhuihd.com,DIRECT
+DOMAIN,download.jetbrains.com,DIRECT
+
+# Local Area Network
+DOMAIN-SUFFIX,local,DIRECT
+IP-CIDR,192.168.0.0/16,DIRECT
+IP-CIDR,10.0.0.0/8,DIRECT
+IP-CIDR,172.16.0.0/12,DIRECT
+IP-CIDR,127.0.0.0/8,DIRECT
+IP-CIDR,100.64.0.0/10,DIRECT
+
+# GeoIP China
+GEOIP,CN,DIRECT
+
+FINAL,Final,dns-failed
+
+[Host]
+*.taobao.com = server:223.5.5.5
+*.tmall.com = server:223.5.5.5
+# CUSTOM HOST
+
+[Header Rewrite]
+# CUSTOM HEADER
+
+[URL Rewrite]
+# Redirect Google Search Service
+^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
+
+# Redirect HTTP to HTTPS
+^https?:\/\/(www.)?taobao\.com\/ https://taobao.com/ 302
+^https?:\/\/(www.)?jd\.com\/ https://www.jd.com/ 302
+^https?:\/\/(www.)?mi\.com\/ https://www.mi.com/ 302
+^https?:\/\/you\.163\.com\/ https://you.163.com/ 302
+^https?:\/\/(www.)?suning\.com/ https://suning.com/ 302
+^https?:\/\/(www.)?yhd\.com https://yhd.com/ 302
+
+# Redirect False to True
+# > IGN China to IGN Global
+^https?:\/\/(www.)?ign\.xn--fiqs8s\/ http://cn.ign.com/ccpref/us 302
+# > Fake Website Made By Makeding
+^https?:\/\/(www.)?abbyychina\.com\/ http://www.abbyy.cn/ 302
+^https?:\/\/(www.)?bartender\.cc\/ https://cn.seagullscientific.com 302
+^https?:\/\/(www.)?betterzip\.net\/ https://macitbetter.com/ 302
+^https?:\/\/(www.)?beyondcompare\.cc\/ https://www.scootersoftware.com/ 302
+^https?:\/\/(www.)?bingdianhuanyuan\.cn\/ http://www.faronics.com/zh-hans/ 302
+^https?:\/\/(www.)?chemdraw\.com\.cn\/ http://www.cambridgesoft.com/ 302
+^https?:\/\/(www.)?codesoftchina\.com\/ https://www.teklynx.com/ 302
+^https?:\/\/(www.)?coreldrawchina\.com\/ https://www.coreldraw.com/cn/ 302
+^https?:\/\/(www.)?crossoverchina\.com\/ https://www.codeweavers.com/ 302
+^https?:\/\/(www.)?easyrecoverychina\.com\/ https://www.ontrack.com/ 302
+^https?:\/\/(www.)?ediuschina\.com\/ https://www.grassvalley.com/ 302
+^https?:\/\/(www.)?flstudiochina\.com\/ https://www.image-line.com/flstudio/ 302
+^https?:\/\/(www.)?formysql\.com\/ https://www.navicat.com.cn 302
+^https?:\/\/(www.)?guitarpro\.cc\/ https://www.guitar-pro.com/ 302
+^https?:\/\/(www.)?huishenghuiying\.com\.cn\/ https://www.corel.com/cn/ 302
+^https?:\/\/(www.)?iconworkshop\.cn\/ https://www.axialis.com/iconworkshop/ 302
+^https?:\/\/(www.)?imindmap\.cc\/ https://imindmap.com/zh-cn/ 302
+^https?:\/\/(www.)?jihehuaban\.com\.cn\/ https://sketch.io/ 302
+^https?:\/\/(www.)?keyshot\.cc\/ https://www.keyshot.com/ 302
+^https?:\/\/(www.)?mathtype\.cn\/ http://www.dessci.com/en/products/mathtype/ 302
+^https?:\/\/(www.)?mindmanager\.cc\/ https://www.mindjet.com/ 302
+^https?:\/\/(www.)?mindmapper\.cc\/ https://mindmapper.com 302
+^https?:\/\/(www.)?mycleanmymac\.com\/ https://macpaw.com/cleanmymac 302
+^https?:\/\/(www.)?nicelabel\.cc\/ https://www.nicelabel.com/ 302
+^https?:\/\/(www.)?ntfsformac\.cc\/ https://www.tuxera.com/products/tuxera-ntfs-for-mac-cn/ 302
+^https?:\/\/(www.)?ntfsformac\.cn\/ https://www.paragon-software.com/ufsdhome/zh/ntfs-mac/ 302
+^https?:\/\/(www.)?overturechina\.com\/ https://sonicscores.com/overture/ 302
+^https?:\/\/(www.)?passwordrecovery\.cn\/ https://cn.elcomsoft.com/aopr.html 302
+^https?:\/\/(www.)?pdfexpert\.cc\/ https://pdfexpert.com/zh 302
+^https?:\/\/(www.)?ultraiso\.net\/ https://cn.ezbsystems.com/ultraiso/ 302
+^https?:\/\/(www.)?vegaschina\.cn\/ https://www.vegas.com/ 302
+^https?:\/\/(www.)?xmindchina\.net\/ https://www.xmind.cn/ 302
+^https?:\/\/(www.)?xshellcn\.com\/ https://www.netsarang.com/products/xsh_overview.html 302
+^https?:\/\/(www.)?yuanchengxiezuo\.com\/ https://www.teamviewer.com/zhcn/ 302
+^https?:\/\/(www.)?zbrushcn\.com\/ http://pixologic.com/ 302
+
+# CUSTOM URL
+
+[SSID Setting]
+# CUSTOM SSI
